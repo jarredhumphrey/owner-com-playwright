@@ -26,6 +26,7 @@ test.describe("Request Demo", () => {
     await requestDemoPage.elements.phoneNumberField.fill("5551234567");
 
     await requestDemoPage.elements.restaurantNameField.fill("Pho");
+    // Click the first item in the Google Locations API list.
     await page.locator(".pac-item").first().click();
 
     await requestDemoPage.elements.numberOfLocationsField.fill("12");

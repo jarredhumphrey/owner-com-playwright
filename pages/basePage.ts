@@ -18,8 +18,8 @@ export class BasePage {
   }
 
   async navigateToTabSubLink(tabName: string, linkName: string): Promise<void> {
-    const tabButton = await this.page.getByRole("button", { name: tabName });
-    const subLinksList = await this.page
+    const tabButton = this.page.getByRole("button", { name: tabName });
+    const subLinksList = this.page
       .locator(".nav_menu-dropdown")
       .filter({ has: tabButton })
       .locator("ul");
