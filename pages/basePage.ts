@@ -27,4 +27,9 @@ export class BasePage {
     await this.hoverTab(tabName);
     await subLinksList.getByRole("link", { name: linkName }).click();
   }
+
+  async selectFromDropdown(locator: Locator, option: string): Promise<void> {
+    await locator.click();
+    await this.page.locator("li", { hasText: option }).click();
+  }
 }
